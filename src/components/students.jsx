@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {STable, STHead, STHeadTR, STH, STBody, STBodyTR, STD} from "./style"
 
 const Students = () => {
 
@@ -18,12 +19,36 @@ const Students = () => {
     }
 
     useEffect(()=>{
-        getstudent();
+        // getstudent();
     },[])
 
     return(
         <div>
-            
+            <STable>
+                <STHead>
+                    <STHeadTR>
+                        <STH>Image</STH>
+                        <STH>Name</STH>
+                        <STH>Attendence</STH>
+                        <STH>Total lectures</STH>
+                    </STHeadTR>
+                </STHead>
+                <STBody>
+                    {
+                        student.map((entry)=>{
+                            return(
+                                <STBodyTR>
+                                    <STD><img alt="profile" src={entry.avatarURL} height="100px" width="100px"></img></STD>
+                                    <STD>{entry.name}</STD>
+                                    <STD>{entry.lecturesAttended}</STD>
+                                    <STD>{entry.totalLectures}</STD>
+                                </STBodyTR>
+                            )
+                        })
+                    }
+                    
+                </STBody>
+            </STable>
         </div>
     )
 }
