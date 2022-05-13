@@ -1,9 +1,12 @@
 
+import Students from './components/students';
 import './App.css';
 
 function App() {
   return (
-    <div></div>
+    <div>
+      <Students />
+    </div>
   );
 }
 
