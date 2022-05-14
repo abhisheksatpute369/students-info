@@ -25,9 +25,9 @@ const Search = () => {
         if(value.length >3 ){
             axios(`https://my.api.mockaroo.com/students?key=22483ba0&q=${value}`,{method : "GET"})
             .then(res =>{
-            const data = res.data
-            setSearch(data);
-        })
+                const data = res.data
+                setSearch(data);
+            })
         }
         
     }

@@ -23,16 +23,23 @@ const Students = () => {
             setstudent(data); 
         })
         .catch(err =>{
-            console.log(err);
             setLoading(false);
             setErr(true);
             setstudent([]);
+            if (
+				err.response &&
+				err.response.status >= 400 &&
+				err.response.status <= 500
+			) {
+				setErr(true);
+                console.log(err.response.data.message)
+			}
         })
 
     }
 
     useEffect(()=>{
-        //  getstudent(page);
+          getstudent(page);
     },[page])
 
     // to check scrolling 
