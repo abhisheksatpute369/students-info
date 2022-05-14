@@ -33,11 +33,15 @@ const Search = () => {
     }
 
     const optimesed = useCallback(debounce(handlechange),[])
+
+    const handlesubmit = (e) => {
+        e.preventDefault();
+    }
     return(
         <div id = "inputdiv">
             <form>
                 <SInput type="text" name="search" onChange={optimesed} placeholder="enter name"></SInput>
-                <SButton>Search</SButton>
+                <SButton onClick={handlesubmit}>Search</SButton>
             </form>
             {
                 search.length > 0 &&

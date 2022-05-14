@@ -39,7 +39,7 @@ const Students = () => {
     }
 
     useEffect(()=>{
-          getstudent(page);
+         getstudent(page);
     },[page])
 
     // to check scrolling 
@@ -52,6 +52,10 @@ const Students = () => {
         {
             scrollToEnd();
         }
+    }
+
+    const handlerowclick = ()=>{
+       
     }
 
     return(
@@ -71,11 +75,11 @@ const Students = () => {
                         student.map((entry)=>{
                             return(
                                 <STBodyTR key={entry.id}>
-                                    <STD>{entry.id}</STD>
-                                    <STD><img alt="profile" src={entry.avatarURL} height="100px" width="100px"></img></STD>
-                                    <STD>{entry.name}</STD>
-                                    <STD>{entry.lecturesAttended}</STD>
-                                    <STD>{entry.totalLectures}</STD>
+                                    <STD onClick={handlerowclick}>{entry.id}</STD>
+                                    <STD onClick={handlerowclick}><img alt="profile" src={entry.avatarURL} height="100px" width="100px"></img></STD>
+                                    <STD onClick={handlerowclick}>{entry.name}</STD>
+                                    <STD onClick={handlerowclick}>{entry.lecturesAttended}</STD>
+                                    <STD onClick={handlerowclick}>{entry.totalLectures}</STD>
                                 </STBodyTR>
                             )
                         })
