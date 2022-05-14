@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const STable = styled.table`
     width: 50%;
+    height: 500px;
     border-collapse: collapse;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -35,4 +36,24 @@ export const STBodyTR = styled.tr`
 
 export const STD = styled.td`
     
+`;
+
+
+export const SInput = styled.input`
+    width: 60%;
+    height: 25px;
+`;
+
+export const SButton = styled.button`
+    width: 10%;
+    height: 30px;
+    margin-right: 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    &:hover{
+        background-color: white;
+        color: teal;
+        border: 2px solid teal;
+    }
 `;
